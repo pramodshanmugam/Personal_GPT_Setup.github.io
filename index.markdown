@@ -1,18 +1,22 @@
+
 ---
-layout: default
-title: Setting Up Pramod's GPT Locally
+layout: default  
+title: Setting Up Your Personal GPT Locally  
 ---
 
-# Setting Up Pramod's GPT Locally
+# Worried About Your GPT Search Becoming Public? Here's How to Set Up Your Personal GPT
 
-This guide will walk you through setting up your **Personal GPT** locally using Docker. The project includes a backend, frontend, and uses **Ollama** for LLM inference. You can clone the Docker Compose setup from my [GitHub repository](https://github.com/pramodshanmugam/personal-gpt-docker.git).
+In an era where privacy concerns around AI usage are increasing, many are looking for ways to keep their AI conversations private. This guide will walk you through setting up your **Personal GPT** locally, keeping all interactions secure and private. By leveraging Docker and **Ollama** for LLM inference, you can ensure that your GPT stays entirely under your control.
+
+Follow the steps below to create a personalized GPT environment right on your machine, with easy-to-manage Docker containers. You can clone the full setup from my [GitHub repository](https://github.com/pramodshanmugam/personal-gpt-docker).
 
 ![Pramod's GPT](./images/gptpramod.gif)
 
+---
 
 ## Prerequisites
 
-Before starting, make sure you have the following installed:
+Before we begin, ensure you have the following installed:
 
 1. **Docker**: [Install Docker](https://docs.docker.com/get-docker/)
 2. **Docker Compose**: [Install Docker Compose](https://docs.docker.com/compose/install/)
@@ -21,79 +25,93 @@ Before starting, make sure you have the following installed:
 
 ## Step 1: Clone the Repository
 
-Clone the GitHub repository which contains the Docker Compose setup for the backend and frontend:
+First, grab the repository which contains everything you need to get started:
 
 ```bash
 git clone https://github.com/pramodshanmugam/personal-gpt-docker.git
 cd personal-gpt-docker
 ```
+
 ![Git Clone Screenshot](./images/gitclone.png)
 
-## Step 2: Set Up Ollama Locally
+---
 
-To use Ollama locally for inference, you need to run Ollama in a Docker container. Follow the steps below:
+## Step 2: Set Up Ollama Locally for LLM Inference
 
-1. **Pull Ollama Docker Image:**
+Ollama powers the GPT behind the scenes, allowing for fast local inference. Let’s get it running in a Docker container.
 
-Pull Ollama Docker image into your local:
+### 1. Pull Ollama Docker Image
+
+Start by pulling the Ollama Docker image:
 
 ```bash
 docker pull ollama/ollama
 ```
+
 ![Ollama Pull Screenshot](./images/ollamapull.png)
 
-2. **Run Ollama Docker Container:**
+### 2. Run Ollama Docker Container
 
-Run Ollama on port 11434 by using the following command:
+Next, run the container on port 11434:
 
 ```bash
 docker run -d --name ollama-container -p 11434:11434 ollama/ollama:latest
 ```
 
-2. **Pull the Llama Model:**
+### 3. Pull the Llama Model
 
-Once the container is running, execute this command to pull the Llama model (version 3.2):
+Once the container is running, pull the desired Llama model:
 
 ```bash
 docker exec -it ollama-container ollama pull llama3.2
 ```
-After you successfully pull ollama and run it on your look it should look something like this.
 
-![Ollama Sucessfull Installed](./images/ollamasuccess.png)
+When the pull is complete, your setup should resemble the following screenshot:
+
+![Ollama Successfully Installed](./images/ollamasuccess.png)
+
+---
 
 ## Step 3: Running the Backend and Frontend
 
-Now that Ollama is set up, let's run the backend and frontend services using Docker Compose.
+With Ollama ready, it's time to spin up both the backend and frontend services.
 
-1. **Update the GPT's name (Optional)**
+### 1. Optional: Update the GPT Name
 
-In the docker-compose.yml file, I've set up environment variables for naming the GPT. You can customize the REACT_APP_CHAT_NAME value if needed.
+If you’d like to personalize your GPT instance, open the `docker-compose.yml` file and modify the `REACT_APP_CHAT_NAME` environment variable:
 
 ```yaml
 chatbot_frontend:
   environment:
-    - REACT_APP_CHAT_NAME="Pramod's"  # Modify this if you'd like
+    - REACT_APP_CHAT_NAME="Pramod's GPT"  # Change this to personalize
 ```
 
-![Adding your name to the GPT](./images/changingname.png)
-2. **Run Docker Cmpose**
+![Updating GPT Name](./images/changingname.png)
 
-```bash 
+### 2. Run Docker Compose
+
+Start both the backend and frontend by running Docker Compose:
+
+```bash
 docker-compose up --build
 ```
+
 ![Docker Compose Success](./images/dockercompose.png)
+
+---
 
 ## Step 4: Access the Application
 
-Once the containers are up, you can access the services via:
+Once all the containers are up, visit your personalized GPT at:
 
 - http://localhost:3000
 
 ![Successfully Ran the GPT](./images/gpt.gif)
 
+---
 
-## Conclusion 
+## Conclusion
 
-You have successfully set up Pramod's GPT locally with Docker for both the backend and frontend, and connected it to Ollama for LLM inference. If you run into any issues, feel free to raise an issue on the GitHub repository or contact me.
+Congratulations! You’ve successfully set up your own local GPT using Docker and Ollama. With this setup, you can ensure that all your AI interactions remain private and fully under your control.
 
-
+If you encounter any issues, feel free to open an issue on the GitHub repository or reach out to me.
