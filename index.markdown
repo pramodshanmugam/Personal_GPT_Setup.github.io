@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Setting Up Pramod's GPT Locally
+title: Setting Up GPT Locally
 ---
 
 # Worried About Your GPT Search Becoming Public? Here's How to Set Up Your Personal GPT
 
 In an era where privacy concerns around AI usage are increasing, many are looking for ways to keep their AI conversations private. This guide will walk you through setting up your **Personal GPT** locally, keeping all interactions secure and private. By leveraging Docker and **Ollama** for LLM inference, you can ensure that your GPT stays entirely under your control.
 
-Follow the steps below to create a personalized GPT environment right on your machine, with easy-to-manage Docker containers. You can clone the full setup from my [GitHub repository](https://github.com/pramodshanmugam/personal-gpt-docker).
+Follow the steps below to create a personalized GPT environment right on your machine, with easy-to-manage Docker containers. 
 
 ![Pramod's GPT](./images/gptpramod.gif)
 
