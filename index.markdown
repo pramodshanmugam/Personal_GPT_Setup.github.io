@@ -75,7 +75,7 @@ chatbot_frontend:
     - REACT_APP_CHAT_NAME="Pramod's"  # Modify this if you'd like
 ```
 
-![Adding your name to the GPT](./images/chaningname.png)
+![Adding your name to the GPT](./images/changingname.png)
 2. **Run Docker Cmpose**
 
 ```bash 
