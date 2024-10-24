@@ -5,7 +5,7 @@ title: Setting Up Pramod's GPT Locally
 
 # Setting Up Pramod's GPT Locally
 
-This guide will walk you through setting up your **Personal GPT** locally using Docker. The project includes a backend, frontend, and uses **Ollama** for LLM inference. You can clone the Docker Compose setup from my [GitHub repository](https://github.com/yourusername/repository-name).
+This guide will walk you through setting up your **Personal GPT** locally using Docker. The project includes a backend, frontend, and uses **Ollama** for LLM inference. You can clone the Docker Compose setup from my [GitHub repository](https://github.com/pramodshanmugam/personal-gpt-docker.git).
 
 ## Prerequisites
 
@@ -24,12 +24,22 @@ Clone the GitHub repository which contains the Docker Compose setup for the back
 git clone https://github.com/pramodshanmugam/personal-gpt-docker.git
 cd personal-gpt-docker
 ```
+![Git Clone Screenshot](./assets/gitclone.png)
 
 ## Step 2: Set Up Ollama Locally
 
 To use Ollama locally for inference, you need to run Ollama in a Docker container. Follow the steps below:
 
-1. **Run Ollama Docker Container:**
+1. **Pull Ollama Docker Image:**
+
+Pull Ollama Docker image into your local:
+
+```bash
+docker pull ollama/ollama
+```
+![Ollama Pull Screenshot](./assets/ollamapull.png)
+
+2. **Run Ollama Docker Container:**
 
 Run Ollama on port 11434 by using the following command:
 
@@ -44,6 +54,9 @@ Once the container is running, execute this command to pull the Llama model (ver
 ```bash
 docker exec -it ollama-container ollama pull llama3.2
 ```
+After you successfully pull ollama and run it on your look it should look something like this.
+
+![Ollama Sucessfull Installed](./assets/ollamasuccess.png)
 
 ## Step 3: Running the Backend and Frontend
 
@@ -58,12 +71,14 @@ chatbot_frontend:
   environment:
     - REACT_APP_CHAT_NAME="Pramod's"  # Modify this if you'd like
 ```
+
+![Adding your name to the GPT](./assets/chaningname.png)
 2. **Run Docker Cmpose**
 
 ```bash 
 docker-compose up --build
 ```
-
+![Docker Compose Success](./assets/dockercompose.png)
 
 ## Step 4: Access the Application
 
@@ -71,7 +86,7 @@ Once the containers are up, you can access the services via:
 
 - http://localhost:3000
 
-
+![Successfully Ran the GPT](./assets/Success.png)
 ## Conclusion 
 
 You have successfully set up Pramod's GPT locally with Docker for both the backend and frontend, and connected it to Ollama for LLM inference. If you run into any issues, feel free to raise an issue on the GitHub repository or contact me.
