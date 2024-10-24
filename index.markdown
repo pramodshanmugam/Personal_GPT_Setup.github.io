@@ -1,7 +1,6 @@
-
 ---
-layout: default  
-title: Setting Up Your Personal GPT Locally  
+layout: default
+title: Setting Up Pramod's GPT Locally
 ---
 
 # Worried About Your GPT Search Becoming Public? Here's How to Set Up Your Personal GPT
