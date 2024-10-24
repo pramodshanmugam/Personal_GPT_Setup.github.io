@@ -24,7 +24,7 @@ Clone the GitHub repository which contains the Docker Compose setup for the back
 git clone https://github.com/pramodshanmugam/personal-gpt-docker.git
 cd personal-gpt-docker
 ```
-![Git Clone Screenshot](./assets/gitclone.png)
+![Git Clone Screenshot](./images/gitclone.png)
 
 ## Step 2: Set Up Ollama Locally
 
@@ -37,7 +37,7 @@ Pull Ollama Docker image into your local:
 ```bash
 docker pull ollama/ollama
 ```
-![Ollama Pull Screenshot](./assets/ollamapull.png)
+![Ollama Pull Screenshot](./images/ollamapull.png)
 
 2. **Run Ollama Docker Container:**
 
@@ -56,7 +56,7 @@ docker exec -it ollama-container ollama pull llama3.2
 ```
 After you successfully pull ollama and run it on your look it should look something like this.
 
-![Ollama Sucessfull Installed](./assets/ollamasuccess.png)
+![Ollama Sucessfull Installed](./images/ollamasuccess.png)
 
 ## Step 3: Running the Backend and Frontend
 
@@ -72,13 +72,13 @@ chatbot_frontend:
     - REACT_APP_CHAT_NAME="Pramod's"  # Modify this if you'd like
 ```
 
-![Adding your name to the GPT](./assets/chaningname.png)
+![Adding your name to the GPT](./images/chaningname.png)
 2. **Run Docker Cmpose**
 
 ```bash 
 docker-compose up --build
 ```
-![Docker Compose Success](./assets/dockercompose.png)
+![Docker Compose Success](./images/dockercompose.png)
 
 ## Step 4: Access the Application
 
@@ -86,7 +86,7 @@ Once the containers are up, you can access the services via:
 
 - http://localhost:3000
 
-![Successfully Ran the GPT](assets/changingname.png)
+![Successfully Ran the GPT](./images/Success.png)
 
 
 ## Conclusion 
