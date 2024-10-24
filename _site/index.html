@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Setting Up Pramod’s GPT Locally | Perosnal GPT Setup</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Setting Up Pramod’s GPT Locally" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="this is" />
+<meta property="og:description" content="this is" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Perosnal GPT Setup" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setting Up Pramod’s GPT Locally" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"this is","headline":"Setting Up Pramod’s GPT Locally","name":"Perosnal GPT Setup","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Perosnal GPT Setup" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Perosnal GPT Setup</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/">Setting Up Pramod&#39;s GPT Locally</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="setting-up-pramods-gpt-locally">Setting Up Pramod’s GPT Locally</h1>
+
+<p>This guide will walk you through setting up <strong>Pramod’s GPT</strong> locally using Docker. The project includes a backend, frontend, and uses <strong>Ollama</strong> for LLM inference. You can clone the Docker Compose setup from my <a href="https://github.com/yourusername/repository-name">GitHub repository</a>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before starting, make sure you have the following installed:</p>
+
+<ol>
+  <li><strong>Docker</strong>: <a href="https://docs.docker.com/get-docker/">Install Docker</a></li>
+  <li><strong>Docker Compose</strong>: <a href="https://docs.docker.com/compose/install/">Install Docker Compose</a></li>
+</ol>
+
+<hr />
+
+<h2 id="step-1-clone-the-repository">Step 1: Clone the Repository</h2>
+
+<p>Clone the GitHub repository which contains the Docker Compose setup for the backend and frontend:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/yourusername/repository-name.git
+<span class="nb">cd </span>repository-name
+</code></pre></div></div>
+
+<h2 id="step-2-set-up-ollama-locally">Step 2: Set Up Ollama Locally</h2>
+
+<p>To use Ollama locally for inference, you need to run Ollama in a Docker container. Follow the steps below:</p>
+
+<ol>
+  <li><strong>Run Ollama Docker Container:</strong></li>
+</ol>
+
+<p>Run Ollama on port 11434 by using the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">--name</span> ollama-container <span class="nt">-p</span> 11434:11434 ollama/ollama:latest
+</code></pre></div></div>
+
+<ol>
+  <li><strong>Pull the Llama Model:</strong></li>
+</ol>
+
+<p>Once the container is running, execute this command to pull the Llama model (version 3.2):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> ollama-container ollama pull llama3.2
+</code></pre></div></div>
+
+<h2 id="step-3-running-the-backend-and-frontend">Step 3: Running the Backend and Frontend</h2>
+
+<p>Now that Ollama is set up, let’s run the backend and frontend services using Docker Compose.</p>
+
+<ol>
+  <li><strong>Update the GPT’s name (Optional)</strong></li>
+</ol>
+
+<p>In the docker-compose.yml file, I’ve set up environment variables for naming the GPT. You can customize the REACT_APP_CHAT_NAME value if needed.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">chatbot_frontend</span><span class="pi">:</span>
+  <span class="na">environment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">REACT_APP_CHAT_NAME="Pramod's"</span>  <span class="c1"># Modify this if you'd like</span>
+</code></pre></div></div>
+<ol>
+  <li><strong>Run Docker Cmpose</strong></li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose up <span class="nt">--build</span>
+</code></pre></div></div>
+
+<h2 id="step-4-access-the-application">Step 4: Access the Application</h2>
+
+<p>Once the containers are up, you can access the services via:</p>
+
+<ul>
+  <li>http://localhost:3000</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You have successfully set up Pramod’s GPT locally with Docker for both the backend and frontend, and connected it to Ollama for LLM inference. If you run into any issues, feel free to raise an issue on the GitHub repository or contact me.</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Perosnal GPT Setup</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Perosnal GPT Setup</li><li><a class="u-email" href="mailto:pramod.shanmugam@gmail.com">pramod.shanmugam@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/pramod.shanmugam"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">pramod.shanmugam</span></a></li><li><a href="https://www.twitter.com/prmaod"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">prmaod</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>this is </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
