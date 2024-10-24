@@ -86,7 +86,7 @@ Once the containers are up, you can access the services via:
 
 - http://localhost:3000
 
-![Successfully Ran the GPT](./assets/Success.png)
+![Successfully Ran the GPT](./_site/assets/changingname.png)
 ## Conclusion 
 
 You have successfully set up Pramod's GPT locally with Docker for both the backend and frontend, and connected it to Ollama for LLM inference. If you run into any issues, feel free to raise an issue on the GitHub repository or contact me.
