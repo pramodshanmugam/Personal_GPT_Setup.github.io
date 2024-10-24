@@ -5,7 +5,7 @@ title: Setting Up Pramod's GPT Locally
 
 # Setting Up Pramod's GPT Locally
 
-This guide will walk you through setting up **Pramod's GPT** locally using Docker. The project includes a backend, frontend, and uses **Ollama** for LLM inference. You can clone the Docker Compose setup from my [GitHub repository](https://github.com/yourusername/repository-name).
+This guide will walk you through setting up your **Personal GPT** locally using Docker. The project includes a backend, frontend, and uses **Ollama** for LLM inference. You can clone the Docker Compose setup from my [GitHub repository](https://github.com/yourusername/repository-name).
 
 ## Prerequisites
 
@@ -21,8 +21,8 @@ Before starting, make sure you have the following installed:
 Clone the GitHub repository which contains the Docker Compose setup for the backend and frontend:
 
 ```bash
-git clone https://github.com/yourusername/repository-name.git
-cd repository-name
+git clone https://github.com/pramodshanmugam/personal-gpt-docker.git
+cd personal-gpt-docker
 ```
 
 ## Step 2: Set Up Ollama Locally
