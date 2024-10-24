@@ -7,7 +7,7 @@ title: Setting Up GPT Locally
 
 In an era where privacy concerns around AI usage are increasing, many are looking for ways to keep their AI conversations private. This guide will walk you through setting up your **Personal GPT** locally, keeping all interactions secure and private. By leveraging Docker and **Ollama** for LLM inference, you can ensure that your GPT stays entirely under your control.
 
-Follow the steps below to create a personalized GPT environment right on your machine, with easy-to-manage Docker containers. 
+Follow the steps below to create a personalized GPT environment right on your machine, with easy-to-manage Docker containers. You can clone the full setup from my [GitHub repository Frontend:](https://github.com/pramodshanmugam/chatbot-frontend-react.git) [Github repository Backend:](https://github.com/pramodshanmugam/chatbot-frontend-react.git).
 
 ![Pramod's GPT](./images/gptpramod.gif)
 
