@@ -86,8 +86,8 @@ Once the containers are up, you can access the services via:
 
 - http://localhost:3000
 
-![Successfully Ran the GPT](./_site/assets/success.svg)
-![Description of the image]({{ 'assest/Success.png' | relative_url }})
+![Successfully Ran the GPT](assets/changingname.png)
+
 
 ## Conclusion 
 
