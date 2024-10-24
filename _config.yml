@@ -21,7 +21,8 @@
 title: Perosnal GPT Setup
 email: pramod.shanmugam@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  In a world where data privacy is paramount, keeping your personal conversations with AI secure can be a challenge. This blog provides a step-by-step guide to setting up your own local GPT system using Docker and Ollama for inference. With this setup, you can run a fully private, personalized GPT model on your machine, ensuring that all interactions stay under your control. Whether you're concerned about your data being used publicly or simply want a custom chatbot experience, this guide has you covered.
+
+  Learn how to set up your own private GPT locally using Docker and Ollama for secure AI conversations. Keep your data safe and fully under your control with this simple, step-by-step guide.
 baseurl: "personal_gpt_setup.github.io" # the subpath of your site, e.g. /blog
 url: "https://pramodshanmugam.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: prmaod
